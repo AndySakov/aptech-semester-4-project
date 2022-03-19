@@ -40,52 +40,54 @@ Commands
 
 
 def clear():
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
+	if os.name == 'nt':
+		os.system('cls')
+	else:
+		os.system('clear')
 
 
 def transform(hints):
-    transformed = []
-    for hint in hints:
-        cond = choice([True, False])
-        if(cond == True):
-            transformedHint = [p.capitalize() for p in hint]
-            transformed.append("".join(transformedHint))
-        else:
-            transformed.append(hint)
-    return transformed
+	transformed = []
+	for hint in hints:
+		cond = choice([True, False])
+		if(cond == True):
+			transformedHint = [p.capitalize() for p in hint]
+			transformed.append("".join(transformedHint))
+		else:
+			transformed.append(hint)
+	return transformed
 
 
 symbols = ['!', '@', '$', '%', '^', '&', '*', '-',
-           '_', '+', '=', ':', '|', '~', '?', '/', '.', ';']
+		   '_', '+', '=', ':', '|', '~', '?', '/', '.', ';']
 
 
 def generatePassword(hints):
-    separator = choice(symbols)
-    padding = f"{choice(symbols)}"*2
-    startDigits = ''.join(sample(digits, 2))
-    endDigits = ''.join(sample(digits, 2))
-    stuff = f'{separator}'.join(hints)
-    final = [padding, startDigits, stuff, separator, endDigits, padding]
-    return ''.join(final)
+	separator = choice(symbols)
+	padding = f"{choice(symbols)}"*2
+	startDigits = ''.join(sample(digits, 2))
+	endDigits = ''.join(sample(digits, 2))
+	stuff = f'{separator}'.join(hints)
+	final = [padding, startDigits, stuff, separator, endDigits, padding]
+	return ''.join(final)
 
 
 run = True
 
 while run:
-    clear()
-    print(welcome)
-    start = input("==> ")
-    if start == 'q':
-        run = False
-    elif(start == 'h'):
-        print(welcome)
-        print(info)
-    else:
-        rawHints = start.split(" ")
-        hints = transform(rawHints)
-        print(generatePassword(hints))
-        print('\n\n')
-        input("Press enter to continue...")
+	clear()
+	print(welcome)
+	start = input("==> ")
+	if start == 'q':
+		run = False
+	elif(start == 'h'):
+		clear()
+		print(welcome)
+		print(info)
+		input("Press enter to continue...")
+	else:
+		rawHints = start.split(" ")
+		hints = transform(rawHints)
+		print(generatePassword(hints))
+		print('\n\n')
+		input("Press enter to continue...")
