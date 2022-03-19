@@ -9,7 +9,6 @@ import os
 #  /_/   \_\ .__/ \__\___|\___|_| |_| |____/ \___|_| |_| |_|\___||___/\__\___|_|       |_|   |_|   |_|  \___// |\___|\___|\__|
 #          |_|                                                                                             |__/
 # | ------------------------------------------------------------------------------------------------------------------------ |
-# Based on implementation @ https://xkpasswd.net/
 # Authors: Obafemi Teminife, Adedeji Abubakar Sanusi, David Adegoke, Leonard Efe Oriobor
 # Python version: 3.9.10
 
