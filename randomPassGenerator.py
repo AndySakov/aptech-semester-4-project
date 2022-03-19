@@ -11,6 +11,7 @@ import os
 # | ------------------------------------------------------------------------------------------------------------------------ |
 # Based on implementation @ https://xkpasswd.net/
 # Authors: Obafemi Teminife, Adedeji Abubakar Sanusi, David Adegoke, Leonard Efe Oriobor
+# Python version: 3.9.10
 
 welcome = """
   ___      _   _               ___                              _    ___                       _
